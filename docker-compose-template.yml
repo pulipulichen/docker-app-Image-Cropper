@@ -3,7 +3,7 @@ services:
   app:
     build: .
     tty: true
-    command: node /app/image-crop.js "/input/[INPUT]"
+    command: node /app/image-trim.js "/input/[INPUT]"
     volumes: 
       - ./app:/app/
       - ./cache:/cache/

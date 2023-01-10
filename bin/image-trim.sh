@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_NAME=docker-app-Image-Auto-Crop
+PROJECT_NAME=docker-app-Image-Trim
 
 # -------------------
 # 檢查有沒有參數

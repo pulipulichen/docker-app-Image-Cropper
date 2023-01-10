@@ -1,7 +1,7 @@
 {
-  "name": "docker-app-Image-Auto-Crop",
+  "name": "docker-app-Image-Trim",
   "version": "1.0.0",
-  "description": "Crop image automatically.",
+  "description": "Trim an image.",
   "main": "index.js",
   "scripts": {
     "d0.build": "docker-compose build",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Auto-Crop.git"
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Trim.git"
   },
   "keywords": [
     "PWA"
@@ -19,9 +19,9 @@
   "author": "Pulipuli Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pulipulichen/docker-app-Image-Auto-Crop/issues"
+    "url": "https://github.com/pulipulichen/docker-app-Image-Trim/issues"
   },
-  "homepage": "https://github.com/pulipulichen/docker-app-Image-Auto-Crop#readme",
+  "homepage": "https://github.com/pulipulichen/docker-app-Image-Trim#readme",
   "dependencies": {
   }
 }
