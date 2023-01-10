@@ -1,0 +1,27 @@
+{
+  "name": "docker-app-Image-Auto-Crop",
+  "version": "1.0.0",
+  "description": "Crop image automatically.",
+  "main": "index.js",
+  "scripts": {
+    "d0.build": "docker-compose build",
+    "d1.bash": "docker-compose run app bash",
+    "start": "docker-compose up",
+    "update": "node update.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Auto-Crop.git"
+  },
+  "keywords": [
+    "PWA"
+  ],
+  "author": "Pulipuli Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulipulichen/docker-app-Image-Auto-Crop/issues"
+  },
+  "homepage": "https://github.com/pulipulichen/docker-app-Image-Auto-Crop#readme",
+  "dependencies": {
+  }
+}
