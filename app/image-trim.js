@@ -18,7 +18,7 @@ let main = async function () {
     let ext = path.extname(filename)
 
     // await ShellExec(`convert "${file}" -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
-    await ShellExec(`convert "${file}" -background white -alpha remove -alpha off -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
+    await ShellExec(`convert "${file}" -transparent white -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
     // convert -gravity center "c.png" -flatten -fuzz 1% -trim +repage -resize 64x64 -extent 64x64 "b.ico"
   }
 }
