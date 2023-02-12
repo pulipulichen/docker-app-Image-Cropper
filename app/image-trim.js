@@ -16,9 +16,13 @@ let main = async function () {
     let dirname = path.dirname(file)
     let filenameNoExt = path.parse(filename).name
     let ext = path.extname(filename)
+    if (ext === 'jpg' || ext === 'jpeg') {
+      ext = 'png'
+    }
 
     // await ShellExec(`convert "${file}" -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
-    await ShellExec(`convert "${file}" -transparent white -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
+    // await ShellExec(`convert "${file}" -transparent white -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
+    await ShellExec(`convert "${file}"  -alpha set -bordercolor white -border 1 -fill none -fuzz 3% -draw "color 0,0 floodfill" -shave 1x1 -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
     // convert -gravity center "c.png" -flatten -fuzz 1% -trim +repage -resize 64x64 -extent 64x64 "b.ico"
   }
 }
