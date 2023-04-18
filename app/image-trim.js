@@ -24,7 +24,7 @@ let main = async function () {
     // await ShellExec(`convert "${file}" -transparent white -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
 
     let channels = await ShellExec(`identify -format '%[channels]' "${file}"`)
-    fs.writeFileSync(file + '-channels.txt', channels, 'utf8')
+    // fs.writeFileSync(file + '-channels.txt', channels, 'utf8')
     if (channels.indexOf('a') > -1) {
       await ShellExec(`convert "${file}" -alpha set -bordercolor transparent -border 1 -fill none -fuzz 3% -draw "color 0,0 floodfill" -shave 1x1 -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped' +ext)}"`)
     }
