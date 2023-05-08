@@ -10,4 +10,4 @@ https://pulipulichen.github.io/docker-app-Image-Trim/
 # Changelog
 
 - 修改判斷透明的程度
-https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=166984#p166984
+https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=166984#p166984password

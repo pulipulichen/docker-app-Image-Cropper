@@ -30,6 +30,7 @@ let main = async function () {
 		// ------------
     
     // SetDockerComposeYML(tempFilePath)
+    console.log(file)
 		SetDockerComposeYML(file)
     await ShellSpawn('docker-compose up')
 
