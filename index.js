@@ -1,4 +1,5 @@
-const ShellSpawn = require('./app/lib/ShellSpawn')
+const ShellSpawn = require('./app/lib/ShellExec')
+// const ShellSpawn = require('./app/lib/ShellSpawn')
 const GetExistedArgv = require('./app/lib/GetExistedArgv')
 const SetDockerComposeYML = require('./app/lib/SetDockerComposeYML')
 
