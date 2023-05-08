@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd /tmp/docker-app-Image-Trim/
-docker-compose up
+/tmp/docker-app-Image-Trim/s.sh
 
 PROJECT_NAME=docker-app-Image-Trim
 
