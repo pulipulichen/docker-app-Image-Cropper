@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd /tmp/docker-app-Image-Trim/
-/tmp/docker-app-Image-Trim/s.sh
+# cd /tmp/docker-app-Image-Trim/
+# /tmp/docker-app-Image-Trim/s.sh
 
 PROJECT_NAME=docker-app-Image-Trim
 
@@ -80,10 +80,10 @@ if [ "${useParams}" == "true" ]; then
     # echo "${var}"
     cd "/tmp/${PROJECT_NAME}"
 
-    echo "okkkk1"
-    pwd
-    docker-compose up
-    echo "okkkk2"
+    # echo "okkkk1"
+    # pwd
+    # docker-compose up
+    # echo "okkkk2"
     node "/tmp/${PROJECT_NAME}/index.js" "${var}"
   done
 else
@@ -98,13 +98,13 @@ fi
 
 
 
-echo "Press any key to continue"
-while [ true ] ; do
-read -t 3 -n 1
-if [ $? = 0 ] ; then
-exit ;
-else
-echo "waiting for the keypress"
-fi
-done
+# echo "Press any key to continue"
+# while [ true ] ; do
+# read -t 3 -n 1
+# if [ $? = 0 ] ; then
+# exit ;
+# else
+# echo "waiting for the keypress"
+# fi
+# done
 
