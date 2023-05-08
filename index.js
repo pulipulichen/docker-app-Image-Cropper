@@ -37,6 +37,7 @@ let main = async function () {
 		await ShellSpawn('pwd')
 		await ShellSpawn('ls -la')
 		await ShellSpawn('echo $USER')
+		await ShellSpawn('systemctl --user status docker.service')
     await ShellSpawn('docker-compose up')
 
 		// --------------
