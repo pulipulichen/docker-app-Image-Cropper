@@ -78,6 +78,7 @@ if [ "${useParams}" == "true" ]; then
     cd "/tmp/${PROJECT_NAME}"
 
     echo "okkkk1"
+    pwd
     docker-compose up
     echo "okkkk2"
     node "/tmp/${PROJECT_NAME}/index.js" "${var}"
