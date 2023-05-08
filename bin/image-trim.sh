@@ -76,6 +76,8 @@ if [ "${useParams}" == "true" ]; then
     var=`realpath "${var}"`
     # echo "${var}"
     cd "/tmp/${PROJECT_NAME}"
+
+    echo 'okk'
     node "/tmp/${PROJECT_NAME}/index.js" "${var}"
   done
 else
@@ -83,6 +85,7 @@ else
     echo "$var does not exist."
     #exit
   else
+    echo 'node "/tmp/${PROJECT_NAME}/index.js" "${var}"'
     node "/tmp/${PROJECT_NAME}/index.js" "${var}"
   fi
 fi
