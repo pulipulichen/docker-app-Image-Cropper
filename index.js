@@ -33,6 +33,7 @@ let main = async function () {
     console.log(file)
 		SetDockerComposeYML(file)
 		console.log(file)
+		await ShellSpawn('pwa')
     await ShellSpawn('docker-compose up')
 
 		// --------------
