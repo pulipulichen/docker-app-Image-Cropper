@@ -36,6 +36,7 @@ let main = async function () {
 		console.log(file)
 		await ShellSpawn('pwd')
 		await ShellSpawn('ls -la')
+		await ShellSpawn('echo $USER')
     await ShellSpawn('docker-compose up')
 
 		// --------------
