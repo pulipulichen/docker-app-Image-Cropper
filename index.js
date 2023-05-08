@@ -42,7 +42,7 @@ let main = async function () {
 		await ShellSpawn('which docker-compose')
 
     // await ShellSpawn('docker-compose up')
-		await ShellSpawn('/usr/bin/docker-compose up')
+		await ShellSpawn('docker-compose up')
 
 		// --------------
  
