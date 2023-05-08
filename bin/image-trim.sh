@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 PROJECT_NAME=docker-app-Image-Trim
 
