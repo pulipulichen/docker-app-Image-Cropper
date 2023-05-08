@@ -35,11 +35,11 @@ let main = async function () {
 		SetDockerComposeYML(file)
 		// console.log(file)
 		
-		await ShellSpawn('pwd')
-		await ShellSpawn('ls -la')
-		await ShellSpawn('echo $USER')
-		await ShellSpawn('systemctl --user status docker.service')
-		await ShellSpawn('which docker-compose')
+		// await ShellSpawn('pwd')
+		// await ShellSpawn('ls -la')
+		// await ShellSpawn('echo $USER')
+		// await ShellSpawn('systemctl --user status docker.service')
+		// await ShellSpawn('which docker-compose')
 
     // await ShellSpawn('docker-compose up')
 		await ShellSpawn('docker-compose up')
