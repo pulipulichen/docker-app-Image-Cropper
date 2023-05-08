@@ -77,7 +77,7 @@ if [ "${useParams}" == "true" ]; then
     # echo "${var}"
     cd "/tmp/${PROJECT_NAME}"
 
-    echo "okk ${var}"
+    docker-compose up
     node "/tmp/${PROJECT_NAME}/index.js" "${var}"
   done
 else
