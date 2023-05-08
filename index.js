@@ -32,10 +32,11 @@ let main = async function () {
     // SetDockerComposeYML(tempFilePath)
     console.log(file)
 		SetDockerComposeYML(file)
+		console.log(file)
     await ShellSpawn('docker-compose up')
 
 		// --------------
-
+ 
 		// fs.renameSync(tempFilePath, file)
 		// if (fs.existsSync(path.resolve(dirname, tempFilename.slice(0, -4)) + '.pdf')) {
 		// 	fs.renameSync(path.resolve(dirname, tempFilename.slice(0, -4)) + '.pdf', path.resolve(dirname, filename.slice(0, -4)) + '.pdf')
