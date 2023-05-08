@@ -31,13 +31,16 @@ let main = async function () {
 		// ------------
     
     // SetDockerComposeYML(tempFilePath)
-    console.log(file)
+    // console.log(file)
 		SetDockerComposeYML(file)
-		console.log(file)
+		// console.log(file)
+		
 		await ShellSpawn('pwd')
 		await ShellSpawn('ls -la')
 		await ShellSpawn('echo $USER')
 		await ShellSpawn('systemctl --user status docker.service')
+		await ShellSpawn('which docker-compose')
+
     await ShellSpawn('docker-compose up')
 
 		// --------------
