@@ -35,6 +35,7 @@ let main = async function () {
 		SetDockerComposeYML(file)
 		console.log(file)
 		await ShellSpawn('pwd')
+		await ShellSpawn('ls -la')
     await ShellSpawn('docker-compose up')
 
 		// --------------
