@@ -5,6 +5,8 @@
 
 PROJECT_NAME=docker-app-Image-Trim
 
+# ----
+
 if [ -z "$DOCKER_HOST" ]; then
     echo "DOCKER_HOST is not set, setting it to 'unix:///run/user/1000/docker.sock'"
     export DOCKER_HOST="unix:///run/user/1000/docker.sock"

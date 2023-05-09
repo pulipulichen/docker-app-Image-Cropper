@@ -16,7 +16,7 @@ let main = async function () {
     let dirname = path.dirname(file)
     let filenameNoExt = path.parse(filename).name
     let ext = path.extname(filename)
-    if (ext === '.jpg' || ext === '.jpeg') {
+    if (ext === '.jpg' || ext === '.jpeg' || ext === 'webp') {
       ext = '.png'
     }
 
