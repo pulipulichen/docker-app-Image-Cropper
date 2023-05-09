@@ -5,6 +5,8 @@
 
 PROJECT_NAME=docker-app-Image-Trim
 
+echo $DOCKER_HOST
+
 # -------------------
 # 檢查有沒有參數
 
