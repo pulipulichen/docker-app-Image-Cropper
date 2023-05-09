@@ -5,8 +5,8 @@
 
 PROJECT_NAME=docker-app-Image-Trim
 
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
-echo $DOCKER_HOST
+#export DOCKER_HOST=unix:///run/user/1000/docker.sock
+
 
 # -------------------
 # 檢查有沒有參數
