@@ -29,7 +29,7 @@ let main = async function () {
     // await ShellExec(`convert "${file}" -transparent white -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped.' +ext)}"`)
 
     // let channels = await ShellExec(`identify -format '%[channels]' "${file}"`)
-    let channels = '1'
+    let channels = '0'
     if (isJPG === false) {
       channels = await ShellExec(`convert "${file}" -channel a -separate -format "%[fx:mean]" info:`)
     }
