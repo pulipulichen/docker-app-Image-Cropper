@@ -18,6 +18,7 @@ let main = async function () {
     let ext = path.extname(filename)
     let isJPG = false
 
+    console.log({ext, file})
     if (ext === '.pdf') {
       await ShellExec(`pdftoppm "${file}" "${filenameNoExt}.png" -png`)
       ext = '.png'
