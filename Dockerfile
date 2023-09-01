@@ -1,4 +1,5 @@
 FROM pudding/docker-app:node-18-7z-20230521
+RUN apt-get update
 RUN apt-get install -y \
      imagemagick
 RUN apt-get install -y \
