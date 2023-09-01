@@ -17,6 +17,12 @@ let main = async function () {
     let filenameNoExt = path.parse(filename).name
     let ext = path.extname(filename)
     let isJPG = false
+
+    if (ext === '.pdf') {
+      await ShellExec(`pdftoppm "${file}" "${filenameNoExt}.png" -png`)
+      ext = '.png'
+    }
+
     if (ext === '.jpg' || ext === '.jpeg') { 
       isJPG = true
     }
