@@ -86,6 +86,9 @@ fi
 if [ -d "/tmp/${PROJECT_NAME}" ];
 then
   cd "/tmp/${PROJECT_NAME}"
+
+  pwd
+
   git reset --hard
   git pull --force
 else
@@ -125,6 +128,12 @@ setDockerComposeYML() {
   echo "$template" > "/tmp/${PROJECT_NAME}/docker-compose.yml"
 }
 
+runDockerCompose() {
+  if ! docker-compose up --build; then
+    echo "Error occurred. Trying with sudo..."
+    sudo docker-compose up --build
+  fi
+}
 
 # -----------------
 # 執行指令
@@ -156,7 +165,7 @@ if [ "${useParams}" == "true" ]; then
     # SetDockerComposeYML(file)
     setDockerComposeYML "${var}"
 
-    docker-compose up --build
+    runDockerCompose
 
   done
 else
@@ -169,6 +178,6 @@ else
 
     setDockerComposeYML "${var}"
 
-    docker-compose up --build
+    runDockerCompose
   fi
 fi
