@@ -136,6 +136,8 @@ fi
 
 setDockerComposeYML() {
   file="$1"
+  echo "${file}"
+
   filename=$(basename "$file")
   dirname=$(dirname "$file")
 
