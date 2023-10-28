@@ -106,31 +106,6 @@ cmp --silent "/tmp/${PROJECT_NAME}/Dockerfile" "/tmp/${PROJECT_NAME}.cache/Docke
 cp "/tmp/${PROJECT_NAME}/Dockerfile" "/tmp/${PROJECT_NAME}.cache/"
 cp "/tmp/${PROJECT_NAME}/package.json" "/tmp/${PROJECT_NAME}.cache/"
 
-# -----------------
-# MacOS安裝必要指令
-
-# Check if the script is running on macOS
-if [[ "$(uname)" == "Darwin" ]]; then
-    echo "Running on macOS"
-    
-    # Check if grealpath is available
-    if command -v grealpath &> /dev/null; then
-        echo "grealpath is installed"
-    else
-        echo "grealpath is not installed, installing via Homebrew"
-        
-        # Install coreutils via Homebrew
-        if command -v brew &> /dev/null; then
-            brew install coreutils 
-            echo "grealpath installed successfully"
-        else
-            echo "Homebrew is not installed. Please install Homebrew to proceed."
-        fi
-    fi
-else
-    echo "This script is not running on macOS"
-fi
-
 # =================================================================
 # 宣告函數
 

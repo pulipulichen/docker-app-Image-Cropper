@@ -4,10 +4,18 @@ Trim an image.
 https://pulipulichen.github.io/docker-app-Image-Trim/
 
 - Example file: https://pulipulichen.github.io/docker-app-Image-Trim/example%20folder/image%20%E5%9C%96%E7%89%87.png
-- Linux: https://pulipulichen.github.io/docker-app-Image-Trim/bin/image-trim.sh
+- Linux & MacOS: https://pulipulichen.github.io/docker-app-Image-Trim/bin/image-trim.sh
 - Windows: https://pulipulichen.github.io/docker-app-Image-Trim/bin/image-trim.exe
+
+# How to run bash in Linux and MacOS? 
+
+1. open termianl
+2. go to the directory
+3. chmod +x *.sh
+4. now you can double click the sh
 
 # Changelog
 
 - 修改判斷透明的程度
 https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=166984#p166984password
+
