@@ -54,18 +54,18 @@ then
   exit
 fi
 
-if ! command -v node &> /dev/null
-then
-  echo "node could not be found"
+# if ! command -v node &> /dev/null
+# then
+#   echo "node could not be found"
 
-  if command -v xdg-open &> /dev/null; then
-    xdg-open https://nodejs.org/en/download/ &
-  elif command -v open &> /dev/null; then
-    open https://nodejs.org/en/download/ &
-  fi
+#   if command -v xdg-open &> /dev/null; then
+#     xdg-open https://nodejs.org/en/download/ &
+#   elif command -v open &> /dev/null; then
+#     open https://nodejs.org/en/download/ &
+#   fi
 
-  exit
-fi
+#   exit
+# fi
 
 if ! command -v docker-compose &> /dev/null
 then
