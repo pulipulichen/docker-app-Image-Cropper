@@ -28,8 +28,7 @@ if [ ! -f "$var" ]; then
     var=$(kdialog --getopenfilename --multiple ~/ 'Files')
     
   elif command -v osascript &> /dev/null; then
-    selected_file=$(osascript -e 'tell application "System Events" to 
-    return POSIX path of (choose file with prompt "Select a file:")')
+    selected_file="$(osascript -l JavaScript -e 'a=Application.currentApplication();a.includeStandardAdditions=true;a.chooseFile({withPrompt:"Please select a file to process:"}).toString()')"
 
     # Storing the selected file path in the "var" variable
     var="$selected_file"
