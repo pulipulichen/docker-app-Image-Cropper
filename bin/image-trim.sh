@@ -24,7 +24,17 @@ WORK_DIR=`pwd`
 if [ ! -f "$var" ]; then
   # echo "$1 does not exist."
   # exit
-  var=$(kdialog --getopenfilename --multiple ~/ 'Images')
+  if command -v kdialog &> /dev/null; then
+    var=$(kdialog --getopenfilename --multiple ~/ 'Images')
+    
+  elif command -v osascript &> /dev/null; then
+    selected_file=$(osascript -e 'tell application "System Events" to 
+    return POSIX path of (choose file with prompt "Select a file:")')
+
+    # Storing the selected file path in the "var" variable
+    var="$selected_file"
+
+  fi
   var=`echo "${var}" | xargs`
   useParams="false"
 fi
@@ -35,21 +45,39 @@ fi
 if ! command -v git &> /dev/null
 then
   echo "git could not be found"
-  xdg-open https://git-scm.com/downloads &
+
+  if command -v xdg-open &> /dev/null; then
+    xdg-open https://git-scm.com/downloads &
+  elif command -v open &> /dev/null; then
+    open https://git-scm.com/downloads &
+  fi
+
   exit
 fi
 
 if ! command -v node &> /dev/null
 then
   echo "node could not be found"
-  xdg-open https://nodejs.org/en/download/ &
+
+  if command -v xdg-open &> /dev/null; then
+    xdg-open https://nodejs.org/en/download/ &
+  elif command -v open &> /dev/null; then
+    open https://nodejs.org/en/download/ &
+  fi
+
   exit
 fi
 
 if ! command -v docker-compose &> /dev/null
 then
   echo "docker-compose could not be found"
-  xdg-open https://docs.docker.com/compose/install/ &
+
+  if command -v xdg-open &> /dev/null; then
+    xdg-open https://docs.docker.com/compose/install/ &
+  elif command -v open &> /dev/null; then
+    open https://docs.docker.com/compose/install/ &
+  fi
+
   exit
 fi
 
@@ -79,14 +107,63 @@ cp "/tmp/${PROJECT_NAME}/Dockerfile" "/tmp/${PROJECT_NAME}.cache/"
 cp "/tmp/${PROJECT_NAME}/package.json" "/tmp/${PROJECT_NAME}.cache/"
 
 # -----------------
+# MacOS安裝必要指令
+
+# Check if the script is running on macOS
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "Running on macOS"
+    
+    # Check if grealpath is available
+    if command -v grealpath &> /dev/null; then
+        echo "grealpath is installed"
+    else
+        echo "grealpath is not installed, installing via Homebrew"
+        
+        # Install coreutils via Homebrew
+        if command -v brew &> /dev/null; then
+            brew install coreutils 
+            echo "grealpath installed successfully"
+        else
+            echo "Homebrew is not installed. Please install Homebrew to proceed."
+        fi
+    fi
+else
+    echo "This script is not running on macOS"
+fi
+
+# =================================================================
+# 宣告函數
+
+setDockerComposeYML() {
+  file="$1"
+  filename=$(basename "$file")
+  dirname=$(dirname "$file")
+
+  template=$(<../../docker-compose-template.yml)
+  template="${template/\[SOURCE\]/$dirname}"
+  template="${template/\[INPUT\]/$filename}"
+
+  echo "$template" > ../../docker-compose.yml
+}
+
+
+# -----------------
 # 執行指令
+
+
 
 if [ "${useParams}" == "true" ]; then
   # echo "use parameters"
   for var in "$@"
   do
     cd "${WORK_DIR}"
-    var=`realpath "${var}"`
+    
+
+    if command -v realpath &> /dev/null; then
+      var=`realpath "${var}"`
+    else
+      var=$(cd "$(dirname "${var}")"; pwd)/"$(basename "${var}")"
+    fi
     # echo "${var}"
     cd "/tmp/${PROJECT_NAME}"
 
@@ -94,7 +171,14 @@ if [ "${useParams}" == "true" ]; then
     # pwd
     # docker-compose up
     # echo "okkkk2"
-    node "/tmp/${PROJECT_NAME}/index.js" "${var}"
+    
+    
+    #node "/tmp/${PROJECT_NAME}/index.js" "${var}"
+    # SetDockerComposeYML(file)
+    setDockerComposeYML "${var}"
+
+    docker-compose up --build
+
   done
 else
   if [ ! -f "${var}" ]; then
@@ -102,6 +186,10 @@ else
     #exit
   else
     echo 'node "/tmp/${PROJECT_NAME}/index.js" "${var}"'
-    node "/tmp/${PROJECT_NAME}/index.js" "${var}"
+    # node "/tmp/${PROJECT_NAME}/index.js" "${var}"
+
+    setDockerComposeYML "${var}"
+
+    docker-compose up --build
   fi
 fi
