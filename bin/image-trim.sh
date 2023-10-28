@@ -141,7 +141,8 @@ setDockerComposeYML() {
   filename=$(basename "$file")
   dirname=$(dirname "$file")
 
-  template=$(<../../docker-compose-template.yml)
+
+  template=$(<"/tmp/${PROJECT_NAME}/docker-compose-template.yml")
   template="${template/\[SOURCE\]/$dirname}"
   template="${template/\[INPUT\]/$filename}"
 
