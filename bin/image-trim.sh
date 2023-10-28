@@ -8,8 +8,13 @@ PROJECT_NAME=docker-app-Image-Trim
 # ----
 
 if [ -z "$DOCKER_HOST" ]; then
-    echo "DOCKER_HOST is not set, setting it to 'unix:///run/user/1000/docker.sock'"
-    export DOCKER_HOST="unix:///run/user/1000/docker.sock"
+    
+    if [[ "$(uname)" == "Darwin" ]]; then
+      echo "Running on macOS"
+    else
+      echo "DOCKER_HOST is not set, setting it to 'unix:///run/user/1000/docker.sock'"
+      export DOCKER_HOST="unix:///run/user/1000/docker.sock"
+    fi
 else
     echo "DOCKER_HOST is set to '$DOCKER_HOST'"
 fi
@@ -129,6 +134,10 @@ setDockerComposeYML() {
 }
 
 runDockerCompose() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    chown -R $(whoami) ~/.docker
+  fi
+
   if ! docker-compose up --build; then
     echo "Error occurred. Trying with sudo..."
     sudo docker-compose up --build
