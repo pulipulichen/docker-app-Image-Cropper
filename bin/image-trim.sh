@@ -25,7 +25,7 @@ if [ ! -f "$var" ]; then
   # echo "$1 does not exist."
   # exit
   if command -v kdialog &> /dev/null; then
-    var=$(kdialog --getopenfilename --multiple ~/ 'Images')
+    var=$(kdialog --getopenfilename --multiple ~/ 'Files')
     
   elif command -v osascript &> /dev/null; then
     selected_file=$(osascript -e 'tell application "System Events" to 
