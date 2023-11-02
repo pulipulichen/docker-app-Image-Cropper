@@ -135,7 +135,12 @@ setDockerComposeYML() {
 
 runDockerCompose() {
   if [[ "$(uname)" == "Darwin" ]]; then
-    chown -R $(whoami) ~/.docker
+    
+    if ! chown -R $(whoami) ~/.docker; then
+      sudo chown -R $(whoami) ~/.docker
+      sudo docker-compose up --build
+      exit 0
+    fi
   fi
 
   if ! docker-compose up --build; then

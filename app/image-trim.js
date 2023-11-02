@@ -50,7 +50,7 @@ let main = async function () {
       await ShellExec(`convert "${file}" -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped' +ext)}"`)
     }
     else {
-      await ShellExec(`convert "${file}" -alpha set -bordercolor white -border 1 -fill none -fuzz 20% -draw "color 0,0 floodfill" -shave 1x1 -fuzz 20% -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped' +ext)}"`)
+      await ShellExec(`convert "${file}" -alpha set -bordercolor white -border 1 -fill none -fuzz 5% -draw "color 0,0 floodfill" -shave 1x1 -fuzz 5% -trim +repage "${path.resolve(dirname, filenameNoExt + '-cropped' +ext)}"`)
     }
     // convert -gravity center "c.png" -flatten -fuzz 1% -trim +repage -resize 64x64 -extent 64x64 "b.ico"
   }
