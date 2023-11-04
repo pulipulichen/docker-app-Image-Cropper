@@ -5,6 +5,31 @@
 
 PROJECT_NAME=docker-app-Image-Trim
 
+# ----------------------------------------------------------------
+
+LOCK_FILE="/tmp/${PROJECT_NAME}.lock"
+while true; do
+    if [ -f "$LOCK_FILE" ]; then
+        file_time=$(stat -c %Y "$LOCK_FILE")
+        current_time=$(date +%s)
+        time_diff=$((current_time - file_time))
+        
+        if [ $time_diff -le 600 ]; then
+            echo "File exists and was created within the last 10 minutes."
+            echo "Sleeping for 30 seconds before checking again..."
+            sleep 3
+        else
+            echo "File exists but was not created within the last 10 minutes."
+            break
+        fi
+    else
+        echo "File does not exist."
+        break
+    fi
+done
+
+touch "${LOCK_FILE}"
+
 # ----
 
 if [ -z "$DOCKER_HOST" ]; then
@@ -152,8 +177,6 @@ runDockerCompose() {
 # -----------------
 # 執行指令
 
-
-
 if [ "${useParams}" == "true" ]; then
   # echo "use parameters"
   for var in "$@"
@@ -195,3 +218,6 @@ else
     runDockerCompose
   fi
 fi
+
+#sleep 30
+rm -f "${LOCK_FILE}"
