@@ -1,7 +1,7 @@
 # Dockerhub
 
 - https://docs.docker.com/get-started/04_sharing_app/
-- `docker image ls` 找出合適的名稱，例如「docker-app-archive-7-zip_app」
+- `docker image ls | head` 找出合適的名稱，例如「docker-app-image-trim-app」
 - 建立對應的repo https://hub.docker.com/
 - https://hub.docker.com/repository/docker/pudding/docker-app/general
 - pudding/docker-app

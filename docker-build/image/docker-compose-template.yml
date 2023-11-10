@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    build: .
+    image: docker-app-Image-Trim-20231111-0113
     tty: true
     command: node /app/image-trim.js "/input/[INPUT]"
     volumes: 
