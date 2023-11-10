@@ -6,7 +6,7 @@
 # - 目錄路徑必須是完整路徑
 
 PROJECT_NAME=docker-app-Image-Trim
-IMAGE_NAME=docker-app-Image-Trim-20231111-0113
+IMAGE_NAME=pudding/docker-app:docker-app-Image-Trim-20231111-0113
 LOCAL_VOLUMN_PATH=/app
 LOCAL_PORT=80
 RUN_IN_BACKGROUND=false
