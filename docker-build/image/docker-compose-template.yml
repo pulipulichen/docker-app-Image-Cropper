@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    image: pudding/docker-app:docker-app-Image-Trim-20231112.000045
+    image: pudding/docker-app:docker-app-Image-Trim-20231112.002247
     tty: true
     command: node /app/index.js "/input/__INPUT__"
     environment:
