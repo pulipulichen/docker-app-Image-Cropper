@@ -7,6 +7,7 @@ https://pulipulichen.github.io/docker-app-Image-Trim/
 
 - Linux & MacOS: https://pulipulichen.github.io/docker-app-Image-Trim/bin/image-trim.sh
 - Windows: https://pulipulichen.github.io/docker-app-Image-Trim/bin/image-trim.exe
+- Colab: https://colab.research.google.com/drive/1VX_ttV7iu3HP7ao41PajrNBf5rEgFQly?usp=sharing
 
 # How to run bash in Linux and MacOS? 
 

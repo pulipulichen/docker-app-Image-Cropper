@@ -1,6 +1,6 @@
 const ShellSpawn = require('./lib/ShellSpawn')
 const ShellExec = require('./lib/ShellExec')
-const GetExistedArgv = require('./lib/GetExistedArgv')
+const GetFiles = require('./lib/GetFiles')
 
 const path = require('path')
 const fs = require('fs')
@@ -8,7 +8,7 @@ const fs = require('fs')
 // convert a.tif -thumbnail 64x64^ -gravity center -extent 64x64 b.ico
 
 let main = async function () {
-  let files = GetExistedArgv()
+  let files = GetFiles()
   for (let i = 0; i < files.length; i++) {
     let file = files[i]
     
