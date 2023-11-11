@@ -17,4 +17,4 @@ RUN apt-get install -y \
 
 # CMD ["bash"]
 
-RUN echo "20231112-0001"
+RUN echo "20231112-0002"
