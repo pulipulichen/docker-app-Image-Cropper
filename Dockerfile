@@ -16,3 +16,5 @@ RUN apt-get install -y \
 # # RUN npm install
 
 # CMD ["bash"]
+
+RUN echo "20231112-0000"
