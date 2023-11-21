@@ -41,6 +41,9 @@ let main = async function () {
     if (isJPG === false) {
       channels = await ShellExec(`convert "${file}" -channel a -separate -format "%[fx:mean]" info:`)
     }
+    else {
+      channels = '1'
+    }
       
 
     // fs.writeFileSync(file + '-channels.txt', channels, 'utf8')
