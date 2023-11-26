@@ -10,3 +10,5 @@
 - 修改Dockerfile `FROM pudding/docker-app:node-18-7z-20230521`
 
 softwareupdate --install-rosetta
+
+- 加入到監控清單 https://github.com/democwise2016/dockerhub-image-refresher/edit/main/docker-image-list.txt
