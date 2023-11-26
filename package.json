@@ -1,7 +1,7 @@
 {
-  "name": "docker-app-Image-Trim",
+  "name": "docker-app-Image-Cropper",
   "version": "1.0.0",
-  "description": "Trim an image.",
+  "description": "Crop an image.",
   "main": "index.js",
   "scripts": {
     "start": "docker-compose up --build",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Trim.git"
+    "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Cropper.git"
   },
   "keywords": [
     "PWA"
@@ -20,9 +20,9 @@
   "author": "Pulipuli Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pulipulichen/docker-app-Image-Trim/issues"
+    "url": "https://github.com/pulipulichen/docker-app-Image-Cropper/issues"
   },
-  "homepage": "https://github.com/pulipulichen/docker-app-Image-Trim#readme",
+  "homepage": "https://github.com/pulipulichen/docker-app-Image-Cropper#readme",
   "dependencies": {
   }
 }

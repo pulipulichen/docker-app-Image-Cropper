@@ -1,11 +1,11 @@
 version: "3"
 services:
   app:
-    image: pudding/docker-app:docker-app-Image-Trim-20231112.203739
+    image: pudding/docker-app:docker-app-Image-Cropper-20231127.013233
     tty: true
     command: node /app/index.js "/input/__INPUT__"
     environment:
-      - CONTAINER_NAME=docker-app-image-trim-app
+      - CONTAINER_NAME=docker-app-image-cropper-app
       - LOCAL_VOLUMN_PATH=/input/
       - RUN_COMMAND=node /app/index.js
     volumes: 
