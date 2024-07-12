@@ -64,6 +64,7 @@ let main = async function () {
     }
     // convert -gravity center "c.png" -flatten -fuzz 1% -trim +repage -resize 64x64 -extent 64x64 "b.ico"
 
+    console.log({isAVIF})
     if (isAVIF) {
       let tmp2 = path.resolve(dirname, filenameNoExt + '-cropped' +ext)
       let tmp3 = path.resolve(dirname, filenameNoExt + '-cropped3' +ext)
