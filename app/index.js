@@ -68,10 +68,10 @@ let main = async function () {
     if (isAVIF) {
       let tmp2 = path.resolve(dirname, filenameNoExt + '-cropped' +ext)
       let tmp3 = path.resolve(dirname, filenameNoExt + '-cropped3' +ext)
-      await ShellExec(`convert "${tmp2}" -trim +repage "${tmp3}"`)
+      await ShellExec(`convert "${tmp2}" -alpha set -bordercolor white -border 1 -fill none -fuzz 2% -draw "color 0,0 floodfill" -shave 1x1 -fuzz 5% -trim +repage "${tmp3}"`)
 
       fs.unlinkSync(tmp2)
-      // fs.renameSync(tmp3, tmp2)
+      fs.renameSync(tmp3, tmp2)
     }
   }
 }
