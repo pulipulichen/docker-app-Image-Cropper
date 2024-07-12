@@ -71,7 +71,7 @@ let main = async function () {
       await ShellExec(`convert "${tmp2}" -trim +repage "${tmp3}"`)
 
       fs.unlinkSync(tmp2)
-      fs.renameSync(tmp3, tmp2)
+      // fs.renameSync(tmp3, tmp2)
     }
   }
 }
