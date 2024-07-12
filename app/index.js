@@ -25,7 +25,7 @@ let main = async function () {
       ext = '.png'
     }
 
-    if (ext === '.jpg' || ext === '.jpeg') { 
+    if (ext === '.jpg' || ext === '.jpeg' || ext === '.avif') { 
       isJPG = true
     }
 
