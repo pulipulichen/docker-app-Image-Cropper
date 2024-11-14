@@ -16,6 +16,10 @@ let main = async function () {
     let dirname = path.dirname(file)
     let filenameNoExt = path.parse(filename).name
     let ext = path.extname(filename)
+
+    await ShellExec(`cp "${file}" /tmp/input.${ext}`)
+    file = `/tmp/input.${ext}`
+
     let isJPG = false
     let isAVIF = false
 
