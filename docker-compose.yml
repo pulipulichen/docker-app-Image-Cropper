@@ -3,8 +3,3 @@ services:
   app:
     build: .
     tty: true
-    command: node /app/image-trim.js "/input/資組.zip"
-    volumes: 
-      - ./app:/app/
-      - ./cache:/cache/
-      - .:/input/
