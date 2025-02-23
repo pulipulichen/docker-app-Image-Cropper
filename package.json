@@ -15,9 +15,15 @@
     "url": "git+https://pulipuli.chen@gmail.com@github.com/pulipulichen/docker-app-Image-Cropper.git"
   },
   "keywords": [
-    "PWA"
+    "Docker-APP",
+    "ImageMagick"
   ],
-  "author": "Pulipuli Chen",
+  "author": {
+    "name": "Yung-Ting Chen",
+    "email": "blog@pulipuli.info",
+    "orcid": "https://orcid.org/0000-0003-3751-610X",
+    "url": "https://blog.pulipuli.info"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pulipulichen/docker-app-Image-Cropper/issues"
