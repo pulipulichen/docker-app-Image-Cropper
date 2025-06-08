@@ -3,6 +3,7 @@ services:
   app:
     image: pudding/docker-app:docker-app-Image-Cropper-20240712.145238
     tty: true
+    user: "${UID}:${GID}"
     command: node /app/index.js "/input/__INPUT__"
     environment:
       - CONTAINER_NAME=docker-app-image-cropper-app
